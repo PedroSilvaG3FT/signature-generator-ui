@@ -1,0 +1,9 @@
+@import "./variables";
+@import "./custom/index";
+
+body {
+  color: $text;
+  font-size: $text-base;
+  background: $bg-primary;
+  font-family: "Montserrat", sans-serif;
+}

@@ -1,0 +1,35 @@
+.form-group {
+  width: auto;
+  margin-bottom: 1.75rem;
+
+  > label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  > input,
+  > select,
+  > textarea {
+    display: block;
+    height: $button-height;
+    padding: 0.25rem 0.75rem;
+    border-radius: $rounded-md;
+    border: 1px solid $primary;
+    width: -webkit-fill-available;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  > textarea {
+    height: auto;
+  }
+
+  > span {
+    color: $secondary;
+    position: absolute;
+    font-size: $text-sm;
+    margin-top: 0.25rem;
+  }
+}

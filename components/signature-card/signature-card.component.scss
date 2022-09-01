@@ -1,0 +1,17 @@
+@import "/styles/global.scss";
+
+#signature-card {
+  background: #fff;
+  padding: 1rem 1.8rem;
+
+  #image-container {
+    padding: 10px;
+    padding-right: 24px;
+    border-right: 1px solid;
+  }
+
+  #details-container {
+    padding: 10px;
+    padding-left: 24px;
+  }
+}

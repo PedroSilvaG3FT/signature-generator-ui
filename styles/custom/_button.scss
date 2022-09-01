@@ -1,0 +1,26 @@
+@import "../variables";
+
+.btn {
+  cursor: pointer;
+  padding: 0px 1rem;
+  height: $button-height;
+  border-color: transparent;
+  border-radius: $rounded-md;
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  color: $bg-primary;
+  background: $primary;
+}
+
+.btn-secondary {
+  @extend .btn;
+  color: $bg-primary;
+  background: $secondary;
+}
