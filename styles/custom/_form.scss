@@ -11,10 +11,10 @@
   > select,
   > textarea {
     display: block;
-    height: $button-height;
+    height: $input-height;
     padding: 0.25rem 0.75rem;
     border-radius: $rounded-md;
-    border: 1px solid $primary;
+    border: 1px solid transparent;
     width: -webkit-fill-available;
 
     &:focus {

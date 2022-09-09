@@ -1,18 +1,14 @@
 <template>
-  <section class="container">
+  <section>
     <ClientOnly>
-      <img
-        src="~/assets/images/logo.png"
-        class="animate__animated animate__fadeInDown"
+      <TutorialContainer v-if="isShowTutorial" @onClickClose="hideTutorial" />
+      <SignaturePreview
+        :data="formModel"
+        @onClickReset="onClickReset"
+        @onClickTutorial="showTutorial"
+        v-else-if="enablePreview"
       />
-      <h1 class="animate__animated animate__fadeInDown">
-        Gerador de assinaturas e-mail
-      </h1>
-
-      <article>
-        <CredentialForm @onUpdate="onUpdate" />
-        <SignaturePreview :data="formModel" />
-      </article>
+      <CredentialForm @onSubmit="onSubmit" v-else />
     </ClientOnly>
   </section>
 </template>
@@ -21,20 +17,37 @@
 import { ISignature } from "~/interfaces/signature.interface";
 import CredentialForm from "~~/components/credential-form/credential-form.component.vue";
 import SignaturePreview from "~/components/signature-preview/signature-preview.component.vue";
+import TutorialContainer from "~/components/tutorial-container/tutorial-container.component.vue";
 
 export default {
   components: {
     CredentialForm,
     SignaturePreview,
+    TutorialContainer,
+  },
+  computed: {
+    enablePreview() {
+      return !!Object.keys(this.formModel).length;
+    },
   },
   data() {
     return {
+      isShowTutorial: false,
       formModel: {} as ISignature,
     };
   },
   methods: {
-    onUpdate(form: ISignature) {
+    onSubmit(form: ISignature) {
       this.formModel = form;
+    },
+    onClickReset() {
+      this.formModel = {};
+    },
+    showTutorial() {
+      this.isShowTutorial = true;
+    },
+    hideTutorial() {
+      this.isShowTutorial = false;
     },
   },
 };
@@ -42,21 +55,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "/styles/global.scss";
-
-.container {
-  height: 96vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-
-  > h1 {
-    font-size: $text-lg;
-    margin-bottom: 2.6rem;
-  }
-
-  > article {
-    width: 80%;
-  }
-}
 </style>

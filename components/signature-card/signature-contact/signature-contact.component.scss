@@ -1,7 +1,7 @@
 #signature-contact {
   tr > td {
     > img {
-      margin-right: 12px;
+      margin-right: 4px;
     }
 
     > a {
@@ -9,11 +9,18 @@
       color: #ff5722;
 
       > img {
-        margin-right: 14px;
+        margin-right: 12px;
       }
 
       &:last-of-type > img {
         margin-right: 0px;
+      }
+
+      &#link {
+        margin-right: 4px;
+        padding-left: 12px;
+        font-size: 80% !important;
+        text-underline-position: under;
       }
     }
   }

@@ -1,39 +1,44 @@
 <template>
   <section id="credential-form" class="animate__animated animate__fadeIn">
-    <form>
+    <h1>Gere sua assinatura em 1 minuto</h1>
+
+    <form @submit.prevent="handleSubmit">
       <div>
-        <label>Nome</label>
+        <label>Digite seu nome</label>
         <input
           type="text"
           name="name"
-          @input="onUpdateForm"
           v-model="formModel.name"
+          placeholder="Digite seu nome"
         />
       </div>
 
       <div>
-        <label>Ocupação</label>
+        <label>Insira sua área</label>
         <input
           type="text"
           name="occupation"
-          @input="onUpdateForm"
+          placeholder="Insira sua área"
           v-model="formModel.occupation"
         />
       </div>
 
       <div>
         <label>
-          Telefone
+          Seu celular
           <small>(Opcional)</small>
         </label>
+
         <input
           type="text"
           name="telephone"
           v-telephone-mask
-          @input="onUpdateForm"
+          placeholder="(00) 00000-0000"
           v-model="formModel.telephone"
         />
       </div>
+
+      <button type="submit" :disabled="isInvalid">Gerar Assinatura</button>
     </form>
   </section>
 </template>

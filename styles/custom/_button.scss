@@ -2,7 +2,9 @@
 
 .btn {
   cursor: pointer;
-  padding: 0px 1rem;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.25rem 1rem;
   height: $button-height;
   border-color: transparent;
   border-radius: $rounded-md;
@@ -15,12 +17,20 @@
 
 .btn-primary {
   @extend .btn;
-  color: $bg-primary;
+  color: $text;
   background: $primary;
+}
+
+.btn-primary-outline {
+  @extend .btn;
+  color: $primary;
+  font-weight: 700;
+  border-color: $primary;
+  background: transparent;
 }
 
 .btn-secondary {
   @extend .btn;
-  color: $bg-primary;
+  color: $text;
   background: $secondary;
 }

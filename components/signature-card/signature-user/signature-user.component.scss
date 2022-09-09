@@ -1,18 +1,16 @@
 @import "/styles/global.scss";
 
 #signature-user {
-  display: flex;
-  flex-direction: column;
+  color: $bg-primary;
 
-  > div {
-    &:first-of-type {
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: $text-lg;
-    }
+  #name {
+    font-size: 100%;
+    font-weight: bold;
+  }
 
-    > label {
-      color: $gray;
-    }
+  #occupation,
+  #telephone {
+    color: $gray;
+    font-size: 92%;
   }
 }

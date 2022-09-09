@@ -2,21 +2,45 @@
 
 #signature-preview {
   display: flex;
+  padding: 2rem;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background: $bg-primary;
+  border-radius: $rounded-xl;
+
+  > h1 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: $text-lg;
+  }
 
   > article {
-    margin-top: 1.6rem;
+    width: 100%;
+    display: flex;
+    margin-top: 3rem;
+    align-items: center;
+    flex-direction: column;
 
     > button {
+      width: 70%;
+      margin-bottom: 1rem;
       @extend .btn-primary;
-      margin-right: 1rem;
 
       &:last-of-type {
-        margin-right: 0;
-        @extend .btn-secondary;
+        @extend .btn-primary-outline;
       }
+    }
+
+    > a {
+      color: $primary;
+      cursor: pointer;
+      font-weight: 700;
+      margin-top: 1rem;
+      text-align: center;
+      text-decoration: underline;
+      text-underline-position: under;
     }
   }
 }

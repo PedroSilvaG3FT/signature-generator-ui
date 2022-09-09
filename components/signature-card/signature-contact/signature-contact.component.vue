@@ -1,5 +1,5 @@
 <template>
-  <table id="signature-contact">
+  <table id="signature-contact" width="100%">
     <tr>
       <td align="right">
         <img src="https://i.ibb.co/7QLy7g5/corner.png" />
@@ -7,10 +7,10 @@
     </tr>
 
     <tr>
-      <td>
+      <td align="right">
         <table>
           <tr>
-            <td align="center">
+            <td align="center" width="100%">
               <a
                 v-for="(item, index) in items"
                 :key="index"
@@ -26,8 +26,8 @@
     </tr>
 
     <tr>
-      <td align="center">
-        <a href="https://www.cbyk.com.br">www.cbyk.com.br</a>
+      <td align="right">
+        <a href="https://www.cbyk.com.br" id="link">www.cbyk.com.br</a>
       </td>
     </tr>
   </table>

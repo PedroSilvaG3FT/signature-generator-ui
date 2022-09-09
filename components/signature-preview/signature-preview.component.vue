@@ -1,10 +1,14 @@
 <template>
-  <section id="signature-preview" class="animate__animated animate__fadeInUp">
+  <section id="signature-preview" class="animate__animated animate__fadeIn">
+    <h1>Veja como ficou sua assinatura</h1>
+
     <SignatureCard :data="data" />
 
     <article>
-      <button :disabled="disabledAction" @click="handleCopy">Cópiar</button>
-      <button :disabled="disabledAction" @click="handleExport">Exportar</button>
+      <button @click="handleExport">Exportar</button>
+      <button @click="handleReset">Refazer</button>
+
+      <a @click="handleClickTutorial">Veja como inserir a imagem no e-mail</a>
     </article>
   </section>
 </template>

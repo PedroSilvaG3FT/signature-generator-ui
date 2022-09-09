@@ -9,52 +9,35 @@ export default defineComponent({
     container(): HTMLElement {
       return document.getElementById("signature-card");
     },
-    disabledAction() {
-      return !this.data || !this.data.name || !this.data.occupation;
-    },
   },
   methods: {
-    _showLabels(show: boolean) {
-      const labels = document.getElementsByClassName("label-detail");
-
-      [...labels].forEach((label: HTMLElement) => {
-        label.style.visibility = show ? "visible" : "hidden";
-      });
-    },
-    _showContact(show: boolean) {
-      const contactContainer = document.getElementById("contact-container");
-      contactContainer.style.visibility = show ? "visible" : "hidden";
-    },
-    handleCopy() {
-      const selection = window.getSelection();
-      if (selection) selection.removeAllRanges();
-
-      this._showLabels(false);
-
-      const range = document.createRange();
-
-      range.selectNode(this.container);
-      selection.addRange(range);
-      document.execCommand("copy");
-
-      selection.removeAllRanges();
-      setTimeout(() => this._showLabels(true), 150);
-    },
     handleExport() {
-      this._showContact(false);
+      const clone = this.container.cloneNode(true);
 
-      html2canvas(this.container)
+      clone.width = "700";
+      clone.id = "signature-clone";
+      clone.style.position = "fixed";
+      clone.style.marginTop = "100vh";
+      clone.style.paddingLeft = "12px";
+
+      document.body.appendChild(clone);
+
+      html2canvas(clone, { useCORS: true, allowTaint: true })
         .then((canvas) => {
-          const image = canvas.toDataURL("image/jpeg", 9);
+          const image = canvas.toDataURL("image/png", 9);
           const element = document.createElement("a");
 
-          element.download = "image.jpeg";
+          element.download = "image.png";
           element.href = image;
           element.click();
         })
-        .finally(() => {
-          this._showContact(true);
-        });
+        .finally(() => clone.remove());
+    },
+    handleReset() {
+      this.$emit("onClickReset");
+    },
+    handleClickTutorial() {
+      this.$emit("onClickTutorial");
     },
   },
 });

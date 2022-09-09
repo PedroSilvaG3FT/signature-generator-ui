@@ -1,0 +1,36 @@
+@import "/styles/global.scss";
+
+#tutorial-container {
+  display: flex;
+  padding: 1.8rem;
+  align-items: center;
+  flex-direction: column;
+  background: $bg-primary;
+  border-radius: $rounded-xl;
+
+  > h1 {
+    margin: 0;
+    text-align: center;
+    font-size: $text-lg;
+  }
+
+  > ul {
+    padding: 0;
+    margin: 4rem 0;
+    list-style-type: none;
+
+    > li {
+      margin-bottom: 1.4rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  > button {
+    width: 68%;
+    margin-bottom: 1rem;
+    @extend .btn-primary;
+  }
+}

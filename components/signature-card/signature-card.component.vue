@@ -1,13 +1,19 @@
 <template>
-  <table width="700" cellpadding="0" cellspacing="0" id="signature-card">
+  <table
+    width="100%"
+    bgcolor="#fff"
+    cellpadding="0"
+    cellspacing="0"
+    id="signature-card"
+  >
     <tr>
-      <td width="120" id="image-container">
-        <img src="https://i.ibb.co/QYKg0zV/logo.png" width="120" />
+      <td width="20%" id="image-container">
+        <img src="https://i.ibb.co/QYKg0zV/logo.png" width="90" />
       </td>
-      <td width="380" id="details-container">
+      <td width="60%" id="details-container">
         <SignatureUser :data="data" />
       </td>
-      <td width="200" id="contact-container" align="right">
+      <td width="20%" id="contact-container" align="right">
         <SignatureContact />
       </td>
     </tr>
