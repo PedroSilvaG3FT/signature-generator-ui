@@ -18,26 +18,34 @@
   height: 96vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @extend .container;
 
   > article {
-    width: 40%;
+    width: 44%;
     text-align: center;
+    padding-right: 2.4rem;
+
+    > img {
+      width: 80%;
+      max-width: 410px !important;
+    }
   }
 
   > main {
-    width: 60%;
+    width: 42%;
   }
 
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 722px) {
+    padding: 1.4rem 1rem;
     flex-direction: column;
     justify-content: flex-start;
 
     > main,
     > article {
       width: 100%;
+      padding-right: 0;
 
       > img {
         width: 150px;

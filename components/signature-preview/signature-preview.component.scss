@@ -43,4 +43,16 @@
       text-underline-position: under;
     }
   }
+
+  @media only screen and (max-width: 720px) {
+    > article {
+      > button {
+        width: 100%;
+      }
+
+      > a {
+        font-size: $text-sm;
+      }
+    }
+  }
 }
